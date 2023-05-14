@@ -38,7 +38,8 @@ En este caso el llamado a la función hasMutation(dna) devuelve “true”.
 
 
 ## Ejecución:
-Descarga del repositorio y ejecuta:
+Descarga del repositorio de https://github.com/asp2021/adn-mutation  
+y ejecuta:
 yarn install o npm install
 
 Para ejecutar:
