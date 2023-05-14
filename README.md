@@ -50,11 +50,24 @@ $ node app.js o npm start o yarn start
 Base de datos Mongo.
 Podras cambiar los datos de la conexión desde bin/mongodb.js
 
-## Postman:
+## Postman - local:
 POST -> http://localhost:3000/mutations/ -> ["ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"] -> Mutation detected
 POST -> http://localhost:3000/mutations/ -> ["ATGCGA","CCGTGC","TTATGT","AGAFGG","CCCCTA","TCACTG"] -> Ha ocurrido un error: error: caracteres invalidos
 POST -> http://localhost:3000/mutations/ -> ["ATGCGA","CAGTCC","TTGTGT","AGAAGG","ACCCTA","TCACTG"] -> No mutation detected
 GET  -> http://localhost:3000/mutations/stats/ -> (ejemplo de json retornado ) ->
+    {
+        "count_mutations": 22,
+        "count_no_mutation": 12,
+        "ratio": "0.65"
+    }
+
+## Postman - cloud:
+POST -> https://adn-mutation-production.up.railway.app/mutations/ -> ["ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"] -> Mutation detected
+
+POST -> https://adn-mutation-production.up.railway.app/mutations/ -> ["ATGCGA","CCGTGC","TTATGT","AGAFGG","CCCCTA","TCACTG"] -> Ha ocurrido un error: error: caracteres invalidos
+
+POST -> https://adn-mutation-production.up.railway.app/mutations/ -> ["ATGCGA","CAGTCC","TTGTGT","AGAAGG","ACCCTA","TCACTG"] -> No mutation detected
+GET  -> https://adn-mutation-production.up.railway.app/mutations/stats/ -> (ejemplo de json retornado ) ->
     {
         "count_mutations": 22,
         "count_no_mutation": 12,
