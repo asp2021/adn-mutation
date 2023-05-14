@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/dbMutation', { useNewUrlParser: true }, function (error) {
+require('dotenv').config();
+
+mongoose.connect(process.env.URL_CONNECT, { useNewUrlParser: true }, function (error) {
     if (error) {
         throw error;
     } else {
